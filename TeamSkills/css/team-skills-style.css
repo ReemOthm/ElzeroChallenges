@@ -1,0 +1,166 @@
+*{
+    box-sizing: border-box;
+}
+
+:root{
+    --background-color: #f6f6f6;
+    --blue-color: #03a9f4;
+    --green-color: #218c74;
+    --dark-blue: #227093;
+    --scarlet: #b33939;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.container{
+    padding-left: 15px ;
+    padding-right: 15px ;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 768px){
+    .container{
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px){
+    .container{
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px){
+    .container{
+        width: 1170px;
+    }
+}
+
+header{
+    position: relative;
+}
+
+header .logo{
+    height: 70px;
+}
+
+header nav ul{
+    display: flex;
+    justify-content: space-between;
+}
+
+header nav ul li a{
+    height: 70px;
+    padding: 0 20px;
+}
+
+header nav ul li a:hover{
+    background-color: var(--background-color);
+}
+
+header .list{
+    display: none;
+}
+
+@media (max-width: 767px) {
+    header nav ul{
+        display: none;
+    }   
+    header .list{
+        display: grid;
+        width: 30px;
+        height: 15px;
+        grid-template-rows: repeat(3, 3px);
+        row-gap: 3px;
+        position: absolute;
+        right: 15px;
+    }   
+    header .list span{
+        background-color: var(--blue-color);
+    } 
+    header .list:hover + ul{
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: white;
+        width: 100%;
+        z-index: 1;
+    }
+    header .list:hover + ul li{
+        border-top: 1px solid #ccc;
+    }
+    header .list:hover + ul li a{
+        justify-content: flex-start;
+    }
+}
+
+.landing p{
+    width: 80%;
+    margin: auto;
+}
+
+.features .container > div{
+    width: calc(85% /3);
+}
+
+@media (max-width: 767px) {
+    .features .container {
+        display: block;
+    }
+    .features .container > div{
+        width:100%;
+    }
+}
+
+@media (max-width: 991px) {
+    .about .image{
+        display: none;
+    }
+    .about .container div:not(.image){
+        width: 80%;
+        text-align: center;
+        margin: auto;
+    }
+}
+
+.skills .container > div > span{
+    width: 100px;
+    text-align: right;
+}
+
+.skills .progress{
+    height: 30px;
+    flex: 1;
+}
+
+.skills .progress span{
+    display: block;
+    height: inherit;
+    position: relative;
+}
+
+.skills .progress span::after{
+    content: attr(data-progress);
+    color: white;
+    font-size: 14px;
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+}
