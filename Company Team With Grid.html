@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Company Team With Grid</title>
+    <style>
+
+        body{
+            display: grid;
+            background-color: #eee;
+            padding: 50px;
+            gap: 10px;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, auto);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        div{
+            border-bottom: 3px solid #ff5722;
+            position: relative;
+            background-color: white;
+            padding: 0px 15px;
+        }
+        div::before{
+            content: "\"";
+            color: #c6c6c6;
+            position: absolute;
+            right: 10px;
+            bottom: -15px;
+            font-size: 50px;
+            transform: rotate(10deg);
+        }
+        span{
+            text-transform: capitalize;
+        }
+
+        .name{
+            display: block;
+            font-weight: bold;
+            padding: 15px 0 5px;
+        }
+
+        .job{
+            color: #9e9e9e;
+            font-size: small;
+            font-weight: 700;
+        }
+
+        p{
+            line-height: 1.5;
+        }
+
+        .description{
+            font-weight: bold;
+        }
+
+        .details{
+            font-size: 15px;
+        }
+
+        .one{
+            grid-column: span 2;
+        }
+
+        .third{
+            grid-row: span 3;
+        }
+
+        .fourth{
+            grid-row:  span 2;
+        }
+
+        .fifith{
+            grid-column:  span 2;
+        }
+
+        .sixth{
+            grid-column:  span 2;
+        }
+
+        .third,
+        .fifith,
+        .eight{
+            color: white;
+            background-color: black;
+        }
+
+        
+    </style>
+</head>
+<body>
+
+    <div class="one">
+        <span class="name">osama mohammed</span> 
+        <span class="job">full-stack developer</span>
+        <p class="description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores consequatur, dolorum maiores,
+            reprehenderit voluptatibus, laborum recusandae rerum quae accusamus explicabo distinctio nulla velit 
+            provident. Velit quo neque repellendus? Minima, accusamus.
+        </p>
+        <p class="details">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora laudantium alias velit 
+            facere voluptatum unde, beatae ad nesciunt temporibus iure accusantium saepe quos cum consequuntur earum
+            nihil vitae voluptatibus! Perspiciatis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis 
+            quam eos praesentium. Velit in recusandae dignissimos optio animi, vitae, officiis asperiores blanditiis 
+            natus officia cumque doloribus enim dolor culpa corporis!
+        </p>
+    </div>
+
+    <div>
+        <span class="name">ahmed sayed</span>
+        <span class="job">IOS developer</span>
+        <p class="description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores consequatur, dolorum maiores, 
+            reprehenderit.
+        </p>
+        <p class="details">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora laudantium alias 
+            velit facere voluptatum unde, beatae ad nesciunt temporibus iure accusantium saepe quos cum.
+        </p>
+    </div>
+
+    <div class="third">
+        <span class="name">shady nabil</span>
+        <span class="job">full-stack developer</span>
+        <p class="description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores consequatur, dolorum maiores, 
+            reprehenderit voluptatibus, laborum recusandae rerum quae accusamus explicabo distinctio nulla velit 
+            provident. Velit quo neque repellendus? Minima, accusamus. Lorem ipsum dolor sit amet accusamus explicabo distinctio 
+        </p>
+        <p class="details">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora laudantium alias 
+            velit facere voluptatum unde, beatae ad nesciunt temporibus iure accusantium saepe quos cum 
+            consequuntur earum nihil vitae voluptatibus! Perspiciatis. consectetur, adipisicing elit. Est, 
+            placeat magnam esse tempora, voluptas nemo sequi ipsum maiores necessitatibus vel natus! Officiis 
+            id dolorem eum voluptatum eaque voluptatem optio. Eligendi! Lorem ipsum dolor sit amet consectetur 
+            adipisicing elit. Sunt, veniam quis reiciendis fugiat corrupti molestiae, quia corporis dolores soluta 
+            minus libero perspiciatis sapiente unde pariatur magni. Eveniet vel fuga praesentium? Lorem ipsum dolor
+            sit amet, consectetur adipisicing elit. Ducimus illum impedit officiis molestiae ea debitis. Sapiente 
+            excepturi repellat quod
+        </p>
+    </div>
+
+    <div class="fourth">
+        <span class="name">mohammed ibrahem</span>
+        <span class="job">.NET developer</span>
+        <p class="description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores consequatur adipisicing elit. Asperiores
+        </p>
+        <p class="details">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora laudantium alias velit 
+            facere voluptatum unde, beatae ad nesciunt temporibus iure accusantium saepe quos cum 
+            consequuntur earum nihil vitae voluptatibus! Perspiciatis. , dolorum maiores, reprehenderit voluptatibus, 
+            laborum recusandae rerum quae accusamus explicabo distinctio nulla velit provident. Velit quo neque 
+            repellendus? Minima, accusamus. lorem lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Inventore quis maiores corrupti ad nesciunt. Assumenda reiciendis maxime, omnis similique recusandae 
+            veritatis! Modi minima, praesentium ratione ipsa
+        </p>
+    </div>
+
+    <div class="fifith">
+        <span class="name">mahmoud mohammed</span>
+        <span class="job">full-stack developer</span>
+        <p class="description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores consequatur, dolorum maiores, 
+            reprehenderit voluptatibus, laborum recusandae rerum quae accusamus explicabo distinctio nulla 
+            velit provident. Velit quo neque repellendus? Minima, accusamus.
+        </p>
+        <p class="details">
+            Lorem ipsum dolor sit, Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+            Odio tempora animi ratione obcaecati nobis aliquam nihil eaque quaerat ipsa rem, tenetur 
+            vitae laboriosam hic quidem? Reiciendis rem maxime saepe vero. Lorem ipsum dolor sit amet 
+            consectetur adipisicing elit. Nemo, quae. Culpa vero corporis accusantium, amet consequatur 
+            a minus dicta? Illum reprehenderit voluptates facere omnis aliquam a corporis modi, vitae officia. 
+            amet consectetur adipisicing elit. Tempora laudantium alias velit facere voluptatum unde.
+        </p>
+    </div>
+
+    <div class="sixth">
+        <span class="name">ezz eldin</span>
+        <span class="job">front-end developer</span>
+        <p class="description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores consequatur, dolorum maiores, 
+            reprehenderit voluptatibus, laborum recusandae rerum quae accusamus explicabo distinctio nulla velit 
+            provident. Velit quo neque repellendus? Minima, accusamus.
+        </p>
+        <p class="details">
+            Lorem ipsum dolor sit,Lorem ipsum dolor sit amet consectetur adipisicing elit. Error doloribus officia nobis,
+            doloremque itaque labore accusamus vero accusantium modi incidunt ab nesciunt, dolorem eaque quaerat 
+            perferendis maxime reprehenderit non consequatur? Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Eveniet quaerat, beatae atque placeat ratione alias hic nam quidem dolores porro facere rerum natus
+            laudantium laborum ea, delectus unde corporis deleniti! amet consectetur adipisicing elit. Tempora
+            laudantium.
+        </p>
+    </div>
+
+    <div>
+        <span class="name">mohammed sayed</span>
+        <span class="job">IOS developer</span>
+        <p class="description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </p>
+        <p class="details">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora laudantium alias velit 
+            facere voluptatum unde, beatae ad nesciunt temporibus iure accusantium.
+        </p>
+    </div>
+
+    <div class="eight">
+        <span class="name">ibrahim sayed</span>
+        <span class="job">IOS developer</span>
+        <p class="description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </p>
+        <p class="details">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora laudantium alias velit 
+            facere voluptatum unde, beatae ad nesciunt temporibus iure accusantium.
+        </p>
+    </div>
+
+    <div>
+        <span class="name">jamal sayed</span>
+        <span class="job">IOS developer</span>
+        <p class="description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </p>
+        <p class="details">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora laudantium alias velit 
+            facere voluptatum unde, beatae ad nesciunt temporibus iure accusantium.
+        </p>
+    </div>
+
+    <div>
+        <span class="name">eman sayed</span>
+        <span class="job">IOS developer</span>
+        <p class="description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </p>
+        <p class="details">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora laudantium alias velit 
+            facere voluptatum unde, beatae ad nesciunt temporibus iure accusantium.
+        </p>
+    </div>
+
+</body>
+</html>
