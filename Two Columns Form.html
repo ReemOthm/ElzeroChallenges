@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Columns Form</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        :focus{
+            outline: none;
+        }
+
+        body{
+            background-color: #333;
+            padding: 0;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            font-family: system-ui;
+        }
+        form{
+            background-color: #f6f6f6;
+            padding: 20px;
+            width: 700px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        form div{
+            width: calc(95% / 2);
+        }
+
+        form label{
+            display: block;
+            margin-bottom: 8px;
+            position: relative;
+        }
+
+        form label.req::after{
+            content: "*";
+            color: rgb(245, 8, 8);
+            position: relative;
+            right: -5px;
+        }
+
+        form div input,
+        form textarea{
+            display: block;
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid #dddcdc;
+            border-radius: 2px;
+        }
+        form div input{
+            padding: 15px 10px;
+            margin-bottom: 15px;
+        }
+        form div input::placeholder{
+            color: #918f8f;
+        }
+
+        form textarea{
+            resize: none;
+            height: calc(100% /2);
+        }
+        form input[type='submit']{
+            width: 100%;
+            background-color: #009688;
+            color: white;
+            border: none;
+            padding: 15px 0;
+            font-size: 18px;
+            border-radius: 6px;
+        }
+        
+    </style>
+</head>
+<body>
+    <form>
+        <div>
+            <label class="req" for="userName">Username</label>
+            <input id="userName" type="text" placeholder="Type Your Name in English Only">
+            <label class="req" for="password">Password</label>
+            <input id="password" type="password" placeholder="Type a Complex Password">
+            <label class="req" for="email">Email</label>
+            <input id="email" type="email" placeholder="Type a Valid Email">
+        </div>
+        <div>
+            <label for="phone">Phone</label>
+            <input id="phone" type="tel">
+            <label for="brief">Brief</label>
+            <textarea id="brief"></textarea>
+        </div>
+        <input type="submit" value="Register">
+    </form>
+</body>
+</html>
