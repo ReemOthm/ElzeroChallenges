@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EL Letters Animation</title>
+    <style>
+
+        body{
+            background-color: #f6f6f6;
+            text-align: center;
+            font-family: cursive;
+            margin: 0;
+        }
+
+        .container {
+            padding-left: 15px;
+            padding-right: 15px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (min-width: 768px){
+            .container{
+                width: 750px;
+            }
+        }
+
+        @media (min-width: 992px){
+            .container{
+                width: 970px;
+            }
+        }
+
+        @media (min-width: 1200px){
+            .container{
+                width: 1170px;
+            }
+        }
+
+        h1{
+            background-color: white;
+        }
+
+        section{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 100px;
+        }
+
+        h2{
+            padding: 13px 20px;
+            background-color: white;
+        }
+
+        .grid-letter,
+        .flex-letter{
+            width: 420px;
+            height: 300px;
+            position: relative;
+        }
+        
+        .grid-letter{
+            display: grid;
+            grid-template-columns: 50px 1fr 20px 50px 1fr;
+            grid-template-rows: 50px 1fr 50px 1fr 50px;
+        }
+
+        .grid-letter::before,
+        .flex-letter::before{
+            content: "";
+            width: 30px;
+            height: 30px;
+            background-color: #ff9800;
+            box-sizing: border-box;
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            opacity: 0;
+            animation: action1 3s linear;
+        }
+
+        .grid-letter::after,
+        .flex-letter::after{
+            content: "";
+            width: 30px;
+            height: 30px;
+            background-color: #ff9800;
+            position: absolute;
+            left: 38%;
+            top: 10px;
+            animation: action2 5s linear 3s;
+        }
+
+        .grid-letter div,
+        .flex-letter .one span{
+            background-color: #444343;
+        }
+
+        .grid-letter div:nth-child(1){
+            grid-row: span 5;
+        }
+
+        .grid-letter div:nth-child(2){
+            grid-area: 1/2/2/3;
+        }
+        .grid-letter div:nth-child(3){
+            grid-area: 3/2/4/3;
+        }
+        .grid-letter div:nth-child(4){
+            grid-area: 5/2/6/3;
+        }
+        .grid-letter div:nth-child(5){
+            grid-area: 1/4/6/5;
+        }
+        .grid-letter div:nth-child(6){
+            grid-area: 5/5/6/6;
+        }        
+
+        .flex-letter{
+            display: flex;
+            justify-content: space-between;
+            box-sizing: border-box;
+        }
+        .flex-letter .one,
+        .flex-letter .two{
+            width: 200px;
+            height: 300px;
+            box-sizing: border-box;
+        }
+        .flex-letter .one{
+            border: 50px solid #444343;
+            border-right: none ;
+            position: relative;
+        }
+
+        .flex-letter .one span{
+            display: block;
+            width: 150px;
+            height: 50px;
+            position: absolute;
+            top: 40%;
+            box-sizing: border-box;
+        }
+
+        .flex-letter .two{
+            border: 50px solid #444343;
+            border-top: none;
+            border-right: none ;
+        }
+
+
+        @keyframes action1{
+            0%{
+                opacity: 1;
+            }
+            40%{
+                opacity: 1;
+                transform: translate(-150px, 0);
+            }
+            80%{
+                opacity: 1;
+                transform: translate(-150px,-250px);
+            }
+            100%{
+                transform: translate(-150px,-250px);
+                opacity: 0;
+            }
+
+        }
+
+        @keyframes action2{
+            
+            10%{
+                transform: translate(-150px, 0px);
+            }
+            20%{
+                transform: translate(-150px, 128px);
+            }
+            30%{
+                transform: translate(0px, 128px);
+            }
+            40%{
+                transform: translate(-150px, 128px);
+            }
+            50%{
+                transform: translate(-150px, 250px);
+            }
+            60%{
+                transform: translate(0px, 250px);
+            }
+            70%{
+                transform: translate(-150px, 250px);
+            }
+            80%{
+                transform: translate(-148px, 0px);
+            }
+            100%{
+                transform: translate(0px, 0px);
+            }
+        }
+
+        @media (max-width: 991px){
+            section{
+                flex-wrap: wrap;
+                gap: 40px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    
+    <h1>EL Letters Animation</h1>
+
+    <section class="container">          
+        <div>
+            <h2>Letters with Grid</h2>
+            <div class="grid-letter">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+
+        <div >
+            <h2>Letters with Flex</h2>
+            <div class="flex-letter">   
+                <div class="one">
+                    <span></span>
+                </div>
+                <div class="two"></div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
