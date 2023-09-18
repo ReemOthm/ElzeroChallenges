@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM CHALLENGE</title>
+</head>
+<body style="display: grid; place-items: center;">
+    <form>
+        <input type="number" name="elements" class="input" placeholder="Number Of Elements" />
+        <input type="text" name="texts" class="input" placeholder="Elements Text" />
+        <select name="type" class="input">
+            <option value="Div">Div</option>
+            <option value="Section">Section</option>
+        </select>
+        <input type="submit" name="create" value="Create" />
+        <div class="results"></div>
+    </form>
+
+    <script>
+
+        let inputs = document.querySelectorAll(".input");
+        let number = document.querySelector('[name=elements]');
+        let text = document.querySelector('[name=texts]');
+        let select = document.getElementsByTagName('select');
+        let submit = document.querySelector('[name=create]');
+        let result = document.querySelector(".results");
+
+        for (let x of inputs){
+            x.style.cssText = 
+            'display: block; box-sizing: border-box; background-color: #f6f6f6; padding: 10px; margin: 0 auto 10px; border: 1px solid #ccc; width: 300px'
+        }
+
+        submit.style.cssText = 'display: block; box-sizing: border-box; background-color: #009688; padding: 10px; margin: 0 auto 10px; color: white; text-align:center; border-radius: 8px; width: 300px; border: none'
+        result.style.cssText = 'display: flex; flex-wrap: wrap; justify-content: center; gap:10px; width:620px'
+
+
+        document.onsubmit = function (e) {
+            e.preventDefault();
+            let count = 1;
+            
+            while(result.hasChildNodes()){
+                result.removeChild(result.firstChild);
+            }
+            
+            for(let i=1; i<= number.value; i++){
+                let div =  document.createElement(select[0].value);
+                let textDiv = document.createTextNode(text.value);
+                div.setAttribute('class','box');
+                div.setAttribute('title','Element');
+                div.setAttribute('id','id-'+count);
+                div.style.cssText = 'width:200px; box-sizing:border-box; color:white; text-align: center; padding: 10px; background-color: #ff5722;';
+                div.appendChild(textDiv);
+                result.appendChild(div);
+                console.log(div);
+                count++;
+            }
+        };
+        
+    </script>
+
+</body>
+</html>
