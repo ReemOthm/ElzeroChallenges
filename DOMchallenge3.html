@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Challenge 3</title>
+</head>
+<body>
+    <script>
+        let header = document.createElement("header");
+        let div = document.createElement("div");
+        let footer = document.createElement("footer");
+
+        document.body.style.cssText = 'font-family: Arial; padding:0; margin:0; height: 100vh; display: grid; grid-template-rows: 50px 1fr 50px;';
+
+        header.style.cssText = "display: flex; justify-content: space-between; align-items: center; padding: 10px";
+
+        let logo = document.createElement('a');
+        logo.setAttribute("href","DOMChallenge3.html");
+        let logoText = document.createTextNode("Elzero");
+        logo.appendChild(logoText);
+
+        logo.style.cssText = "color: #23a96e; padding:13px; font-size: 20px; text-decoration: none; font-weight: 700";
+
+        header.appendChild(logo);
+
+        let list = document.createElement('ul');
+        let anchors = ['Home', 'About', 'Services', 'Contact'];
+
+        for(let x of anchors){
+            let li = document.createElement('li');
+            let anchor = document.createElement('a');
+            anchor.setAttribute("href","#");
+            let text = document.createTextNode(x);
+            anchor.appendChild(text);
+            anchor.style.cssText = 'text-decoration: none; color: #616161';
+            li.appendChild(anchor);
+            list.appendChild(li);
+            li.style.cssText = 'padding: 10px';
+        }
+
+        list.style.cssText = 'display: flex; list-style: none; padding:0; margin:0';
+        header.appendChild(list);
+
+        div.style.cssText = "background-color: hsl(0, 0%, 90%); padding: 15px; display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;";
+        for(let i=1; i<16; i++){
+            let divChild = document.createElement("div");
+            let divText = document.createTextNode(i);
+            let span = document.createElement("span");
+            let spanText = document.createTextNode("Product");
+            
+            span.appendChild(spanText);
+            divChild.appendChild(divText);
+            divChild.appendChild(span);
+
+            divChild.style.cssText = 'width: calc(90% / 3); background-color: white; padding: 15px; text-align: center; border-radius: 3px; font-size: 30px;';
+            span.style.cssText = 'display: block; font-size: 12px; color: #999 ;margin-top: 5px';
+
+            div.appendChild(divChild);
+        }
+
+        footer.style.cssText = "background-color: #23a96e; color: white; text-align: center;";
+        let paragraph = document.createElement("p");
+        let textP = document.createTextNode("Copyright 2021");
+        paragraph.appendChild(textP);
+        footer.appendChild(paragraph);
+
+        document.body.prepend(header);
+        header.after(div);
+        div.after(footer);
+
+    </script>
+</body>
+</html>
