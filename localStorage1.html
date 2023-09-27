@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage Peactice</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&family=Open+Sans:wght@300&family=Roboto:ital,wght@1,100&display=swap" rel="stylesheet">
+    <style>
+
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            display: grid;
+            place-items: center;
+        }
+
+        select{
+            display: block;
+            width: 300px;
+            margin: 10px auto;
+            padding: 10px;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <h1>Select an option from below to change the Text Style!</h1>
+
+    <form action="">
+        <select name="fonts">
+            <option value="open-sans">Open Sans</option>
+            <option value="cairo">Cairo</option>
+            <option value="roboto">Roboto</option>
+        </select>
+
+        <select name="colors">
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+            <option value="green">Green</option>
+            <option value="Black">Black</option>
+            <option value="orange">Orange</option>
+            <option value="violet">Violet</option>
+        </select>
+
+        <select name="sizes">
+            <option value="16px">16</option>
+            <option value="18px">18</option>
+            <option value="20px">20</option>
+            <option value="22px">22</option>
+            <option value="24px">24</option>
+            <option value="26px">26</option>
+            <option value="28px">28</option>
+            <option value="30px">30</option>
+        </select>
+    </form>
+
+    <script>
+
+        let options = document.querySelectorAll('select option');
+        let fonts = document.querySelector('[name=fonts]');
+        let colors = document.querySelector('[name=colors]');
+        let sizes = document.querySelector('[name=sizes]');
+
+        document.addEventListener('change', (e)=>{
+            e.preventDefault();
+            
+            window.localStorage.setItem("font-family",fonts.value);
+            window.localStorage.setItem("color",colors.value);
+            window.localStorage.setItem("font-size",sizes.value);    
+            
+            setStyle();        
+        });
+
+        function setStyle(){
+            document.body.style.fontFamily = window.localStorage.getItem('font-family');
+            document.body.style.color = window.localStorage.getItem('color');
+            document.body.style.fontSize = window.localStorage.getItem('font-size');
+
+            for(let x of options){
+                x.removeAttribute('selected');
+            }
+
+            for(let x of fonts){
+                if(window.localStorage.getItem('font-family') == x.value){
+                    x.setAttribute('selected','');
+                }
+            }
+
+            for(let x of colors){
+                if(window.localStorage.getItem('color') == x.value){
+                    x.setAttribute('selected','');
+                }
+            }
+
+            for(let x of sizes){
+                if(window.localStorage.getItem('font-size') == x.value){
+                    x.setAttribute('selected','');
+                }
+            }
+        }
+
+        setStyle();
+
+    </script>
+    
+</body>
+</html>
