@@ -1,0 +1,21 @@
+.nav-list li:hover{
+    background-color: #eee;
+}
+
+.skills .container > div > span{
+    width: 100px;
+}
+
+.skills .progress{
+    height: 30px;
+}
+
+.skills .progress span::after{
+    content: attr(data-progress);
+    color: white;
+    font-size: 14px;
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+}
